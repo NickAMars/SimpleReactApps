@@ -1,0 +1,125 @@
+*,*::before,*::after{
+  padding:0;
+  margin:0;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  /* background-color: pink; */
+  margin: 4rem;
+}
+
+.hello{
+  color: orangered;
+}
+
+.input{
+  font-size: 1.6rem;
+  font-family: san-sans-serif;
+  color: orangered;
+  padding: 1.5rem 2rem;
+  background-color: purple;
+  border: none;
+  border-bottom: 3px solid transparent;
+  display:inline-block;
+  margin-right: 2rem;
+  border-radius: .6rem;
+}
+/* changes the placeholder text */
+/* .input::-webkit-input-placeholder{
+  color:orangered;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+} */
+
+.input:focus{
+  border-bottom: 3px solid green;
+  outline:none;
+}
+
+.btn{
+    border: none;
+    cursor: pointer;
+    text-transform:uppercase;
+    display: inline-block;
+    padding: 2rem 3rem;
+    border-radius: .6rem;
+    box-shadow: .5rem 1rem 2rem  rgba(255,69,0, .15);
+    transition: all .4s;
+    position:relative;
+  }
+
+  .btn:hover{
+    box-shadow: 1rem 2rem 4rem  rgba(255,69,0, .45);
+    transform: translateY(-3px);
+  }
+  .btn::after{
+    content:"";
+    /* btns attributes */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+
+    border-radius: .6rem;
+    /*position behind button  */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: inherit;
+    /* animation effect */
+    transition: all .4s;
+  }
+/* explode lol */
+  .btn:hover::after{
+    transform:scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
+
+  .btn:focus , .btn:active{
+    outline: none;
+    box-shadow: .5rem 1rem 2rem  rgba(255,69,0, .25);
+    transform: translateY(-2px);
+  }
+
+
+.container{
+  margin: 2rem;
+  padding: 2rem;
+  /* background-color: orangered; */
+}
+.list{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: red; */
+  padding: 2rem;
+
+}
+.item{
+  color: white;
+  letter-spacing: .7rem;
+  padding: 1.5rem 2rem;
+  background-color: green;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.4);
+
+/* lol... this is too hip. temperary fix for the rotating over the other names */
+  margin: 2rem;
+
+  display: inline-block;
+  transition: all 4s;
+}
+.item:hover{
+  transform: rotate(360deg);
+}
+
+.item:not(:last-child){
+  margin-right: 2rem;
+}
+
+.ml-sm{
+  margin-left: 2rem;
+}
