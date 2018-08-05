@@ -1,0 +1,84 @@
+*,*::after,*::before{
+
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+html{
+  font-size: 62.5%;
+}
+
+body{
+    padding: 4rem;
+    text-align: center;
+    /* background-color: orangered; */
+}
+.flash__header{
+  margin-bottom: 2rem;
+}
+.link_home{
+  position: absolute;
+  left: 20%;
+  top: 2%;
+}
+
+
+
+
+/*
+Stack list formating
+*/
+.topics{
+  /* background-color: orangered; */
+  /* margin-bottom: 2rem; */
+}
+.topics__list{
+   list-style: none;
+}
+
+.topics__item:not(:last-child){
+  margin-bottom: 2rem;
+  display:inline-block;
+}
+
+.topics__link:link,.topics__link:visited{
+  text-decoration: none;
+  color: #777;
+}
+
+.stack{
+  display:flex;
+  /* background-color: pink; */
+  justify-content: space-between;
+  padding: 4rem;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.stack__prompt{
+  /* color:  */
+  padding: 1rem 1.5rem;
+  /* background-color: green; */
+  /* border-radius: 10px; */
+  /* -webkit-box-decoration-break: clone;
+  box-decoration-break: clone; */
+}
+
+.stack__answer{
+
+}
+.text-reveal{
+  visibility: visible;
+  animation: fade-in 2s;
+}
+.text-hidden{
+  visibility: hidden;
+}
+@keyframes fade-in {
+  0% { opacity: 0;}
+  100%{ opacity:1;}
+}
