@@ -11,7 +11,8 @@ gives the height and the width of the component when it mounts
    console.log(document.documentElement.clientWidth);
  } -->
 
-react doesn't support regular media query
+So react has its own media queries so we can hide element
+with the screen width
 
  Use for media query with the following library
 

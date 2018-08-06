@@ -2,7 +2,7 @@ import React, { Component } from  'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import {addStack} from '../actions';
-import MediaQuery from 'react-responsive';
+// import MediaQuery from 'react-responsive';
 
 class StackForm extends Component{
   constructor(){
@@ -50,8 +50,7 @@ class StackForm extends Component{
         {
           this.state.cards.map((card, index )=>{
             return (
-              <div key={card.id}>
-              <MediaQuery className='form' minWidth={650}>
+              <div key={card.id} className='form'>
                 <br/>
 
                 <div className="form__group">
@@ -69,27 +68,7 @@ class StackForm extends Component{
                      className="form__input" />
                 </div>
                 <br/>
-              </MediaQuery>
 
-              <MediaQuery  className='form form-column' maxWidth={649}>
-                <br/>
-
-                <div className="form__group">
-                  <label className="form__label" > Prompt : </label>
-                    <input
-                     type="text"
-                    className="form__input"
-                    onChange= {event =>this.updateCardPrompt(event, index, 'prompt') }
-                    />
-                </div>
-                <div className="form__group">
-                  <label className="form__label" >Answer : </label>
-                    <input type="text"
-                    onChange= {event =>this.updateCardPrompt(event, index, 'answer')}
-                     className="form__input" />
-                </div>
-                <br/>
-              </MediaQuery>
               </div>
             )
           })
