@@ -1,9 +1,6 @@
 import React from  'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import Stack from './components/Stack';
-import StackForm from './components/StackForm';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './index.css';
 
 /*
@@ -21,22 +18,24 @@ store.subscribe( () => console.log('store', store.getState()  ));
 // update the store with displash
 store.dispatch(setStack({ id:0, title: 'example', cards: [] }));
 */
-const test = () =>{
-  return (
-    <div>Testing route</div>
-  );
-}
-/* switch try to march the first one so do it from top to bottom*/
-
 ReactDOM.render(
     <Provider store={store}>
-      <Router>
-        <Switch>
-          <Route path='/test' component={test} />
-          <Route path='/stack/new' component={StackForm} />
-          <Route path='/stack' component={Stack} />
-          <Route path='/' component= {App} />
-        </Switch>
-      </Router>
+      <App />
     </Provider>
   , document.getElementById('root'));
+
+
+  /*
+  width this functionality i have the power to create media queries in
+  react by ising the width and the hieght of the screen.
+  just need to be carefull not to use them in all my component
+  */
+
+  // componentDidMount(){
+  //     window.addEventListener('resize', this.sizeUpdate);
+  //     console.log(document.documentElement.clientWidth);
+  //     console.log(document.documentElement.clientHeight);
+  // }
+  // sizeUpdate(){
+  //   console.log(document.documentElement.clientWidth);
+  // }

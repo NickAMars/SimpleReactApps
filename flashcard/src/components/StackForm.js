@@ -2,6 +2,7 @@ import React, { Component } from  'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import {addStack} from '../actions';
+import MediaQuery from 'react-responsive';
 
 class StackForm extends Component{
   constructor(){
@@ -25,22 +26,23 @@ class StackForm extends Component{
   }
 
   addStack(){
-    console.log(this.state);
+    // console.log(this.state);
     this.props.addStack(this.state);
     // console.log('State', this.state);
   }
   render( ){
     // console.log('State', this.state);
+      // console.log(this.state);
     return (
       <div>
         <Link to='/' className="link_home">Home</Link>
         <h1> Create a New Stack </h1>
         <br/>
-        <div className="form__group">
+        <div className="form__title">
           <label className="form__label" >Title : </label>
-          <div className="form__input-box">
+          <div className="form__title-box">
             <input type="text"
-             className="form__input"
+             className="form__title-input"
               onChange={(event)=>{ this.setState({title: event.target.value }) }}
                value={this.state.title} />
           </div>
@@ -49,29 +51,46 @@ class StackForm extends Component{
           this.state.cards.map((card, index )=>{
             return (
               <div key={card.id}>
+              <MediaQuery className='form' minWidth={650}>
                 <br/>
 
                 <div className="form__group">
                   <label className="form__label" > Prompt : </label>
-                  <div className="form__input-box">
                     <input
                      type="text"
                     className="form__input"
                     onChange= {event =>this.updateCardPrompt(event, index, 'prompt') }
                     />
-                  </div>
                 </div>
                 <div className="form__group">
                   <label className="form__label" >Answer : </label>
-                  <div className="form__input-box">
                     <input type="text"
                     onChange= {event =>this.updateCardPrompt(event, index, 'answer')}
                      className="form__input" />
-                  </div>
                 </div>
                 <br/>
-              </div>
+              </MediaQuery>
 
+              <MediaQuery  className='form form-column' maxWidth={649}>
+                <br/>
+
+                <div className="form__group">
+                  <label className="form__label" > Prompt : </label>
+                    <input
+                     type="text"
+                    className="form__input"
+                    onChange= {event =>this.updateCardPrompt(event, index, 'prompt') }
+                    />
+                </div>
+                <div className="form__group">
+                  <label className="form__label" >Answer : </label>
+                    <input type="text"
+                    onChange= {event =>this.updateCardPrompt(event, index, 'answer')}
+                     className="form__input" />
+                </div>
+                <br/>
+              </MediaQuery>
+              </div>
             )
           })
         }
