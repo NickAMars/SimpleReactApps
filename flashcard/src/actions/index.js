@@ -1,5 +1,6 @@
 export const SET_STACK= "SET_STACK";
 export const LOAD_STACKS= "LOAD_STACKS";
+export const ADD_STACK= "ADD_STACK";
 
 export function setStack(stack){
   return {
@@ -13,4 +14,10 @@ export function loadStacks(stacks){
     type: LOAD_STACKS,
     payload: stacks
   };
+}
+export function addStack(stack){
+  return {
+    type: ADD_STACK,
+    payload: stack
+  }
 }

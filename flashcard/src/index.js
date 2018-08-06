@@ -2,6 +2,7 @@ import React from  'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import Stack from './components/Stack';
+import StackForm from './components/StackForm';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './index.css';
 
@@ -25,11 +26,6 @@ const test = () =>{
     <div>Testing route</div>
   );
 }
-const stack_form = () =>{
-  return (
-    <div>Stack Form</div>
-  );
-}
 /* switch try to march the first one so do it from top to bottom*/
 
 ReactDOM.render(
@@ -37,7 +33,7 @@ ReactDOM.render(
       <Router>
         <Switch>
           <Route path='/test' component={test} />
-          <Route path='/stack/new' component={stack_form} />
+          <Route path='/stack/new' component={StackForm} />
           <Route path='/stack' component={Stack} />
           <Route path='/' component= {App} />
         </Switch>

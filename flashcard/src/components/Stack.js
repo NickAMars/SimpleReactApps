@@ -15,9 +15,7 @@ class Stack extends Component{
           <br/>
           {
             cards.map(card=>
-              // <div key={card.id}>
-              //  <h4>{card.prompt}</h4>
-              // </div>
+
               <Card key={card.id} card={card} />
             )
           }

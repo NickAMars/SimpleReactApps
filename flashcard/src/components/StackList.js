@@ -6,10 +6,10 @@ import { setStack, loadStacks } from '../actions';
 
 class StackList extends Component{
   componentDidMount() {
-    if(this.props.stacks.length === 0 )this.props.loadStacks(_stacks);
-
+    if(this.props.stacks.length === 0 )  this.props.loadStacks(_stacks);
   }
   render(){
+    console.log(this.props);
     /*
     test if our function was binded
     console.log('stacklist props', this.props);
@@ -40,6 +40,7 @@ class StackList extends Component{
 }
 
 function mapStateToProps(state){
+  // console.log(state);
   return {
     stacks: state.stacks
   };
