@@ -82,7 +82,7 @@ Stack list formating
 }
 .text-reveal{
   visibility: visible;
-  animation: fade-in 2s;
+  animation: fade-in 1s;
 }
 .text-hidden{
   visibility: hidden;

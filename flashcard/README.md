@@ -1,7 +1,7 @@
 
-gives the height and the width of the component when it mounts
 
 <!--
+gives the height and the width of the component when it mounts
  componentDidMount(){
      window.addEventListener('resize', this.sizeUpdate);
      console.log(document.documentElement.clientWidth);
@@ -28,3 +28,11 @@ npm i react-test-renderer enzyme --save-dev
 
 alternative
 shallow renderer - when we just want to test the individual component without the store or other component
+
+ <!-- Use in stack form
+  console.log(stackForm.debug());
+.first() === .at()
+console.log(stackForm.state());
+ stackform.setState({ cards: [] }); --updates state
+ console.log(card.find('h4').at(1).hasClass('text-hidden'));
+  -->

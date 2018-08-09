@@ -8,3 +8,16 @@ export const props =  {
 };
 
 export const stacks = [ props.stack ];
+
+export const propscard = {
+  card: {
+    prompt: 'test_prompt',
+    answer: 'test_answer'
+  }
+}
+
+export const stackform =  {
+  title: 'titleTest',
+  prompt: 'promptTest',
+  answer: 'answerTest'
+};
