@@ -211,6 +211,10 @@ Form Button
   outline:none;
 }
 
+.form__button:not(:last-child){
+    /* display:inline-block; */
+    margin-right: 2rem;
+  }
 
 
 /* .form-column{
@@ -231,6 +235,7 @@ Form Button
   .form__button:not(:last-child){
     /* display:inline-block; */
     margin-bottom: 2rem;
+    margin-right:0;
   }
 }
 

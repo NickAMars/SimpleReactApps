@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {addStack} from '../actions';
 // import MediaQuery from 'react-responsive';
 
-class StackForm extends Component{
+export class StackForm extends Component{
   constructor(){
     super();
     this.state = {
@@ -16,6 +16,13 @@ class StackForm extends Component{
   addCard(){
     const { cards } = this.state;
     cards.push({ id: cards.length, prompt: '', answer: ''});
+    this.setState({ cards });
+  }
+  removeCard(){
+
+    const { cards } = this.state;
+    if(cards.length === 0) return ;
+    cards.pop();
     this.setState({ cards });
   }
 
@@ -30,13 +37,14 @@ class StackForm extends Component{
     this.props.addStack(this.state);
     // console.log('State', this.state);
   }
+
   render( ){
     // console.log('State', this.state);
       // console.log(this.state);
     return (
       <div>
         <Link to='/' className="link_home">Home</Link>
-        <h1> Create a New Stack </h1>
+        <h1>Create a New Stack</h1>
         <br/>
         <div className="form__title">
           <label className="form__label" >Title : </label>
@@ -54,7 +62,7 @@ class StackForm extends Component{
                 <br/>
 
                 <div className="form__group">
-                  <label className="form__label" > Prompt : </label>
+                  <label className="form__label" >Prompt : </label>
                     <input
                      type="text"
                     className="form__input"
@@ -77,6 +85,10 @@ class StackForm extends Component{
           className="form__button"
           onClick={() => this.addCard()}
           >Add Card</button>
+          <button
+          className="form__button"
+          onClick={() => this.removeCard()}
+          >Remove Card</button>
           {' '}
           <Link
           className="form__button"
