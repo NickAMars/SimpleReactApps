@@ -4,12 +4,12 @@ import _stacks from '../data/stack.json';
 import {Link} from 'react-router-dom';
 import { setStack, loadStacks } from '../actions';
 
-class StackList extends Component{
+export class StackList extends Component{
   componentDidMount() {
     if(this.props.stacks.length === 0 )  this.props.loadStacks(_stacks);
   }
   render(){
-    console.log(this.props);
+    // console.log(this.props);
     /*
     test if our function was binded
     console.log('stacklist props', this.props);

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import  Card from './Card';
 
-class Stack extends Component{
+export class Stack extends Component{
   /*
   */
   render (){
@@ -11,7 +11,7 @@ class Stack extends Component{
     return (
       <div>
         <Link className="link_home" to='/'>Home</Link>
-          <h1> {title}</h1>
+          <h1>{title}</h1>
           <br/>
           {
             cards.map(card=>

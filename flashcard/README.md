@@ -20,3 +20,11 @@ npm install react-responsive --save
 Documents here: https://www.npmjs.com/package/react-responsive
 
 did with an example in Stack form when screen reaches a height of 650px
+
+
+
+
+npm i react-test-renderer enzyme --save-dev
+
+alternative
+shallow renderer - when we just want to test the individual component without the store or other component

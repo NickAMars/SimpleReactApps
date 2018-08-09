@@ -1,5 +1,7 @@
 Applying test cases with jest and enzyme.
 
+npm i --save-dev nzyme-adapter-react-16
+
 key words
 describe  -- hold test case
 test or it -- test case
