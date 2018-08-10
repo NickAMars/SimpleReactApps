@@ -3,25 +3,18 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import  Card from './Card';
 
-export class Stack extends Component{
-  /*
-  */
-  render (){
-     const  {title, cards} = this.props.stack;
+export const Stack = ( {stack : {title, cards} } )=>{
+    // const  {title, cards} = stack;
     return (
       <div>
         <Link className="link_home" to='/'>Home</Link>
           <h1>{title}</h1>
           <br/>
           {
-            cards.map(card=>
-
-              <Card key={card.id} card={card} />
-            )
+            cards.map(card=> <Card key={card.id} card={card} />)
           }
       </div>
     );
-  }
 }
 
 

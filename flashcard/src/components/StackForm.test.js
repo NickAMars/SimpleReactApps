@@ -12,11 +12,11 @@ describe('StackForm', ()=>{
   test('render the title of the page',()=>{expect(stackForm.find('h1').text()).toEqual('Create a New Stack');});
   test('render the title of new stack',()=>{expect(stackForm.find('label').text()).toEqual('Title : ');});
   test('renders context on the link for going home', ()=>{expect(stackForm.find('Link').at(0).props().children).toEqual('Home');});
-  test('renders link to direct to different route', ()=>{expect(stackForm.find('Link').at(0).props().to).toEqual('/');});
+  test('home button rotute', ()=>{expect(stackForm.find('Link').at(0).props().to).toEqual('/');});
   test('renders the button text', ()=>{expect(stackForm.find('button').at(0).text()).toEqual('Add Card');});
   test('renders the button text', ()=>{expect(stackForm.find('button').at(1).text()).toEqual('Remove Card');});
   test('renders context on the link for saving component', ()=>{expect(stackForm.find('Link').at(1).props().children).toEqual('Save and Add Stack');});
-
+  test('submit button route', ()=>{expect(stackForm.find('Link').at(1).props().to).toEqual('/');});
   describe('Click Add Button', ()=>{
     beforeEach(()=>{stackForm.find('button').at(0).simulate('click');});
     afterEach(()=>{stackForm.find('button').at(1).simulate('click');});

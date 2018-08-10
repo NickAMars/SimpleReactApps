@@ -3,13 +3,12 @@ import StackList from './StackList';
 import { Link } from 'react-router-dom';
 
 
-class Flash extends Component {
+const Flash =() => {
 
   // getStack(stack){
   //     console.log(stack);
   // }
 
-  render(){
     return (
       <div>
         <h1 className="flash__header">FlashCard Pro</h1>
@@ -18,7 +17,7 @@ class Flash extends Component {
            <Link to='/stack/new' className="header__link">Create a New Stack</Link>
       </div>
     )
-  }
+  
 }
 
 export default Flash;

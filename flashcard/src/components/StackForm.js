@@ -33,9 +33,8 @@ export class StackForm extends Component{
   }
 
   addStack(){
-    // console.log(this.state);
+    if(this.state.cards.length === 0) return;;
     this.props.addStack(this.state);
-    // console.log('State', this.state);
   }
 
   render( ){
